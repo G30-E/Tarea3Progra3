@@ -15,7 +15,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- Dependencia a tu librería -->
     <dependencies>
         <dependency>
             <groupId>umg.edu.gt</groupId>
@@ -27,7 +26,6 @@
     <build>
         <plugins>
 
-            <!-- Compilador -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -37,7 +35,6 @@
                 </configuration>
             </plugin>
 
-            <!-- FAT JAR (uber jar): incluye dependencias y permite java -jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -51,10 +48,8 @@
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
 
-                            <!-- Jar final: target/stackHandler-1.0.0.jar -->
                             <finalName>${project.artifactId}-${project.version}</finalName>
 
-                            <!-- Main-Class para ejecutar con java -jar -->
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>umg.edu.gt.stackhandler.App</mainClass>
@@ -68,7 +63,7 @@
         </plugins>
     </build>
 
-    <!-- Perfil de Ofuscación con ProGuard (reproducible) -->
+
     <profiles>
         <profile>
             <id>obfuscate</id>
@@ -81,7 +76,7 @@
 
                         <executions>
                             <execution>
-                                <!-- Ejecutar DESPUÉS del package (cuando ya existe el jar del shade) -->
+
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>proguard</goal>
@@ -90,11 +85,10 @@
                         </executions>
 
                         <configuration>
-                            <!-- ProGuard trabaja relativo a target/ -->
+
                             <injar>${project.build.finalName}.jar</injar>
                             <outjar>${project.build.finalName}-obfuscado.jar</outjar>
 
-                            <!-- Usar reglas desde el archivo proguard.pro -->
                             <proguardInclude>${project.basedir}/proguard.pro</proguardInclude>
                         </configuration>
 
