@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>umg.edu.gt</groupId>
+  <artifactId>data-structure-stack</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <maven.compiler.release>11</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <!-- Compilador Java 11 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- PERFIL DE OFUSCACIÓN -->
+  <profiles>
+    <profile>
+      <id>obfuscate</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.wvengen</groupId>
+            <artifactId>proguard-maven-plugin</artifactId>
+            <version>2.6.0</version>
+
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>proguard</goal>
+                </goals>
+              </execution>
+            </executions>
+
+            <configuration>
+              <!-- ProGuard trabaja relativo a target/ -->
+              <injar>${project.build.finalName}.jar</injar>
+              <outjar>${project.build.finalName}-obfuscado.jar</outjar>
+
+              <options>
+                <option>-dontoptimize</option>
+                <option>-dontshrink</option>
+                <option>-dontwarn</option>
+
+                <!-- Keep mínimo para evitar error de printseeds -->
+                <option>-keep public class umg.edu.gt.stack.** { *; }</option>
+              </options>
+            </configuration>
+
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

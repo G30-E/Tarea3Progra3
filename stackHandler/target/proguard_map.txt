@@ -1,0 +1,34 @@
+umg.edu.gt.stack.LinkedStack -> umg.edu.gt.a.a:
+# {"fileName":"LinkedStack.java","id":"sourceFile"}
+    umg.edu.gt.stack.Node top -> a
+    umg.edu.gt.stack.Node bottom -> b
+    int count -> c
+    3:3:void <init>() -> <init>
+    10:14:void push(java.lang.Object) -> a
+    17:22:java.lang.Object pop() -> a
+    26:27:java.lang.Object peek() -> b
+    31:31:boolean isEmpty() -> c
+    35:35:int getCount() -> d
+    36:36:int getSize() -> e
+    37:37:int length() -> f
+    41:41:umg.edu.gt.stack.Node getNodeInit() -> g
+umg.edu.gt.stack.Node -> umg.edu.gt.a.b:
+# {"fileName":"Node.java","id":"sourceFile"}
+    java.lang.Object value -> a
+    umg.edu.gt.stack.Node next -> b
+    7:9:void <init>(java.lang.Object) -> <init>
+    11:14:void <init>(java.lang.Object,umg.edu.gt.stack.Node) -> <init>
+    17:17:java.lang.Object getValue() -> a
+    21:21:umg.edu.gt.stack.Node getNext() -> b
+    25:26:void setNext(umg.edu.gt.stack.Node) -> a
+umg.edu.gt.stackhandler.App -> umg.edu.gt.stackhandler.App:
+# {"fileName":"App.java","id":"sourceFile"}
+    3:3:void <init>() -> <init>
+    5:16:void main(java.lang.String[]) -> main
+umg.edu.gt.stackhandler.SymbolValidator -> umg.edu.gt.stackhandler.a:
+# {"fileName":"SymbolValidator.java","id":"sourceFile"}
+    5:5:void <init>() -> <init>
+    8:23:boolean isValid(java.lang.String) -> a
+    27:27:boolean isOpen(char) -> a
+    31:31:boolean isClose(char) -> b
+    35:35:boolean matches(char,char) -> a

@@ -1,0 +1,21 @@
+umg.edu.gt.stack.LinkedStack -> umg.edu.gt.stack.LinkedStack:
+    umg.edu.gt.stack.Node top -> top
+    umg.edu.gt.stack.Node bottom -> bottom
+    int count -> count
+    void <init>() -> <init>
+    void push(java.lang.Object) -> push
+    java.lang.Object pop() -> pop
+    java.lang.Object peek() -> peek
+    boolean isEmpty() -> isEmpty
+    int getCount() -> getCount
+    int getSize() -> getSize
+    int length() -> length
+    umg.edu.gt.stack.Node getNodeInit() -> getNodeInit
+umg.edu.gt.stack.Node -> umg.edu.gt.stack.Node:
+    java.lang.Object value -> value
+    umg.edu.gt.stack.Node next -> next
+    void <init>(java.lang.Object) -> <init>
+    void <init>(java.lang.Object,umg.edu.gt.stack.Node) -> <init>
+    java.lang.Object getValue() -> getValue
+    umg.edu.gt.stack.Node getNext() -> getNext
+    void setNext(umg.edu.gt.stack.Node) -> setNext
