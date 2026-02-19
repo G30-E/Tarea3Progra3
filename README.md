@@ -41,7 +41,7 @@ Tarea3Progra3/
 ```
 
 
-## 🛠 Compilación desde cero
+## Compilación desde cero
 
 ### 1️ Compilar e instalar la librería
 
